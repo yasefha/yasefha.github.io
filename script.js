@@ -5,7 +5,9 @@ const retryBtn = document.getElementById("retryBtn");
 const correctAnswers = {
   q1: "01/05/2025",
   q2: "yasef hatam",
-  q3: "01/09/2002"
+  q3: "01/09/2002",
+  q4: "keripik",
+  q5: "tasya"
 };
 
 form.addEventListener("submit", function (e) {
@@ -14,7 +16,9 @@ form.addEventListener("submit", function (e) {
   const userAnswers = {
     q1: document.getElementById("q1").value.trim(),
     q2: document.getElementById("q2").value.trim().toLowerCase(),
-    q3: document.getElementById("q3").value.trim()
+    q3: document.getElementById("q3").value.trim(),
+    q4: document.getElementById("q4").value.trim().toLowerCase(),
+    q5: document.getElementById("q5").value.trim().toLowerCase()
   };
 
   let allCorrect = true;
@@ -22,6 +26,8 @@ form.addEventListener("submit", function (e) {
   if (userAnswers.q1 !== correctAnswers.q1) allCorrect = false;
   if (userAnswers.q2 !== correctAnswers.q2) allCorrect = false;
   if (userAnswers.q3 !== correctAnswers.q3) allCorrect = false;
+  if (userAnswers.q4 !== correctAnswers.q4) allCorrect = false;
+  if (userAnswers.q5 !== correctAnswers.q5) allCorrect = false;
 
   if (allCorrect) {
     result.innerHTML = `
